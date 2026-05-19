@@ -22,3 +22,7 @@
 - Updated `index.js` export paths to match
 ### Added
 - `package.json` — xyzcat-ui is now installable as a proper npm package via GitHub
+
+## 0.3.1 — 19-05-2026
+### Fixed
+- Added `FONTS.import` to typography exports — Google Fonts URL now accessible via `FONTS.import`
