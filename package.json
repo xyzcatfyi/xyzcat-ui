@@ -1,0 +1,17 @@
+{
+  "name": "xyzcat-ui",
+  "version": "0.2.0",
+  "description": "Shared component library for the xyzcat ecosystem.",
+  "main": "src/index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyzcatfyi/xyzcat-ui.git"
+  },
+  "author": "xyzcatfyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xyzcatfyi/xyzcat-ui/issues"
+  },
+  "homepage": "https://github.com/xyzcatfyi/xyzcat-ui#readme"
+}

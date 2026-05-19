@@ -3,9 +3,9 @@
 // ============================================
 
 // Tokens
-export { DARK, LIGHT, ACCENT_KEYS }  from './styles/tokens.js';
-export { FONTS, FONT_WEIGHTS, FONT_SIZES } from './styles/typography.js';
+export { DARK, LIGHT, ACCENT_KEYS }  from './styles/flexoki_tokens.js';
+export { FONTS, FONT_WEIGHTS, FONT_SIZES } from './styles/flexoki_typography.js';
 
 // Components
-export { ThemeToggle } from './components/theme/ThemeToggle.jsx';
-export { useTheme } from './components/theme/useTheme.js';
+export { ThemeToggle } from './components/theme/xyzcat-ui_ThemeToggle.jsx';
+export { useTheme } from './components/theme/xyzcat-ui_useTheme.js';
