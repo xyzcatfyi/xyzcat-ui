@@ -1,45 +1,109 @@
 # xyzcat-ui
 
-A personal component library by [@xyzcatfyi](https://github.com/xyzcatfyi).
-
-Reusable React components built for use across personal projects.
+shared component library for the xyzcat ecosystem.
+not for public use. not sorry.
 
 ---
 
-## Components
+## Install
 
-### ThemeToggle
+```bash
+npm install github:xyzcatfyi/xyzcat-ui
+```
 
-A dark/light mode toggle with system preference detection and localStorage persistence.
+---
 
-**Includes:**
-- `useTheme()` — custom hook for theme state management
-- `ThemeToggle` — the toggle button component
-- `THEMES` — colour tokens for dark and light modes
+## What's in here
 
-**Usage:**
+
+### Tokens
+
+#### Flexoki (`flexoki_tokens.js`)
+Dark/light colour tokens based on the [Flexoki palette](https://stephango.com/flexoki) (MIT).
+
+```js
+import { DARK, LIGHT, ACCENT_KEYS } from 'xyzcat-ui';
+```
+
+
+| Export | What it is |
+|---|---|
+| `DARK` | Full dark palette object |
+| `LIGHT` | Full light palette object |
+| `ACCENT_KEYS` | List of available accent colour keys |
+
+
+#### Per-app accents
+| App | Token | Dark | Light |
+|---|---|---|---|
+| Moolah | `gr` | `#879A39` | `#66800B` |
+| Privacy Audit | `cy` | `#3AA99F` | `#24837B` |
+| Hub | `pu` | `#8B7EC8` | `#5E409D` |
+| xyzcat-site | `ye` | `#AD8301` | `#7D5E00` |
+
+---
+
+#### Typography (`flexoki_typography.js`)
+Outfit + DM Mono. Loaded via Google Fonts.
+
+```js
+import { FONTS, FONT_WEIGHTS, FONT_SIZES } from 'xyzcat-ui';
+```
+
+---
+
+### Components
+
+#### ThemeToggle (`xyzcat-ui_ThemeToggle.jsx`)
+Dark/light mode toggle. Reads system preference, persists to localStorage as `xyzcat-theme`.
+
 ```jsx
-import { useTheme, ThemeToggle, THEMES } from './components/ThemeToggle';
+import { ThemeToggle, useTheme } from 'xyzcat-ui';
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
-  const t = THEMES[theme];
 
-  return (
-    <div style={{ background: t.background, color: t.text }}>
-      <ThemeToggle theme={theme} onToggle={toggleTheme} />
-      <p>Hello world!</p>
-    </div>
-  );
+    return (
+      <div data-theme={theme}>
+        <ThemeToggle theme={theme} onToggle={toggleTheme} />
+      </div>
+    );
 }
+```
+
+#### useTheme (`xyzcat-ui_useTheme.js`)
+Hook that manages theme state. Returns `{ theme, toggleTheme }`.
+Sets `data-theme` on the root element — all CSS variables resolve from there.
+
+```js
+import { useTheme } from 'xyzcat-ui';
+const { theme, toggleTheme } = useTheme();
+```
+
+---
+
+## Structure
+
+```
+src/
+├── components/
+│   ├── theme/
+│   │   ├── xyzcat-ui_ThemeToggle.jsx
+│   │   └── xyzcat-ui_useTheme.js
+│   └── language/        ← coming soon
+├── styles/
+│   ├── flexoki_tokens.js
+│   └── flexoki_typography.js
+└── index.js
 ```
 
 ---
 
 ## Stack
-- React
-- Lucide React (icons)
+- React 18
+- Flexoki palette (MIT) — stephango.com/flexoki
+- Outfit + DM Mono via Google Fonts
 
 ---
 
-*More components coming as projects grow* 🩷
+*more components land here as the ecosystem grows* 🩷
