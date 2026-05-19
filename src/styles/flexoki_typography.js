@@ -6,6 +6,7 @@
 //   Code / labels / mono   → DM Mono
 
 export const FONTS = {
+  import: "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap",
   prose: "'Outfit', sans-serif",
   mono:  "'DM Mono', monospace",
 };
