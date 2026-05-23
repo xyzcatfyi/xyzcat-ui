@@ -26,3 +26,9 @@
 ## 0.3.1 — 19-05-2026
 ### Fixed
 - Added `FONTS.import` to typography exports — Google Fonts URL now accessible via `FONTS.import`
+
+## 0.4.0 — 23-05-2026
+### Added
+- `base_tokens.js` — monochrome dark/light theme tokens
+- `base_typography.js` — system-ui fonts, no Google Fonts dependency
+- Both exported from `index.js` under "Base (Monochrome) Theme"

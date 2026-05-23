@@ -2,9 +2,13 @@
 // xyzcat-ui — main export
 // ============================================
 
-// Tokens
-export { DARK, LIGHT, ACCENT_KEYS }  from './styles/flexoki_tokens.js';
+// Flexoki Theme
+export { DARK, LIGHT, ACCENT_KEYS } from './styles/flexoki_tokens.js';
 export { FONTS, FONT_WEIGHTS, FONT_SIZES } from './styles/flexoki_typography.js';
+
+// Base (Monochrome) Theme
+export { BASE_DARK, BASE_LIGHT } from './styles/base_tokens.js';
+export { BASE_FONTS, BASE_FONT_WEIGHTS, BASE_FONT_SIZES } from './styles/base_typography.js';
 
 // Components
 export { ThemeToggle } from './components/theme/xyzcat-ui_ThemeToggle.jsx';
