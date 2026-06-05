@@ -11,5 +11,5 @@ export { BASE_DARK, BASE_LIGHT } from './styles/base_tokens.js';
 export { BASE_FONTS, BASE_FONT_WEIGHTS, BASE_FONT_SIZES } from './styles/base_typography.js';
 
 // Components
-export { ThemeToggle } from './components/theme/xyzcat-ui_ThemeToggle.jsx';
-export { useTheme } from './components/theme/xyzcat-ui_useTheme.js';
+export { ToggleDarkLight } from './components/theme/ToggleDarkLight.jsx';
+export { useTheme } from './components/theme/useTheme.js';
