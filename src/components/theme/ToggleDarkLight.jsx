@@ -19,7 +19,7 @@
 
 import { Sun, Moon } from "lucide-react";
 
-export function ThemeToggle({ theme, onToggle, size = 16 }) {
+export function ToggleDarkLight({ theme, onToggle, size = 16 }) {
   const isDark = theme === "dark";
 
   return (
@@ -27,19 +27,19 @@ export function ThemeToggle({ theme, onToggle, size = 16 }) {
       onClick={onToggle}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
       style={{
-        display:     "flex",
-        alignItems:  "center",
-        gap:         6,
-        background:  "var(--ui)",
-        border:      "1px solid var(--ui-2)",
+        display:      "flex",
+        alignItems:   "center",
+        gap:          6,
+        background:   "var(--bg2)",
+        border:       "1px solid var(--ui)",
         borderRadius: 99,
-        padding:     "6px 12px",
-        cursor:      "pointer",
-        color:       "var(--tx)",
-        fontSize:    12,
-        fontWeight:  500,
-        fontFamily:  "inherit",
-        transition:  "all 0.2s ease",
+        padding:      "6px 12px",
+        cursor:       "pointer",
+        color:        "var(--tx)",
+        fontSize:     12,
+        fontWeight:   500,
+        fontFamily:   "inherit",
+        transition:   "all 0.2s ease",
       }}
     >
       {isDark ? <Sun size={size} /> : <Moon size={size} />}
@@ -47,3 +47,6 @@ export function ThemeToggle({ theme, onToggle, size = 16 }) {
     </button>
   );
 }
+
+
+export default ToggleDarkLight;
