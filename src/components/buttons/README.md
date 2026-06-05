@@ -1,6 +1,6 @@
 ---
 name: buttons
-version: 0.1.0
+version: 0.2.0
 created: 2026-06-05
 updated: 2026-06-05
 description: Button components for the xyzcat-ui library
@@ -17,17 +17,38 @@ Variants are defined by component name, not by props.
 
 | Component | Description |
 |---|---|
-| `ButtonPrimary` | Main call to action |
-| `ButtonSecondary` | Secondary action |
-| `ButtonDestructive` | Destructive or irreversible actions |
+| `ButtonPrimary` | Primary action button. Reference component for the button system. |
+| `ButtonSecondary` | Secondary action — not yet built |
+| `ButtonDestructive` | Destructive or irreversible actions — not yet built |
 
 ## Usage
 
-Import directly:
-
 ```jsx
-import { ButtonPrimary } from 'xyzcat-ui'
+import { ButtonPrimary } from 'xyzcat-ui';
+
+<ButtonPrimary
+  label="Save"
+  onClick={handleSave}
+  shape="rounded"
+  size="md"
+  iconLeft={<Plus />}
+  disabled={false}
+  loading={false}
+/>
 ```
+
+## Props — ButtonPrimary
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `label` | string | — | Button text (required) |
+| `onClick` | function | — | Click handler (required) |
+| `shape` | string | `"rounded"` | `"rounded"` or `"pill"` |
+| `size` | string | `"md"` | `"sm"`, `"md"`, or `"lg"` |
+| `iconLeft` | node | `null` | Optional Lucide icon |
+| `iconRight` | node | `null` | Optional Lucide icon |
+| `disabled` | boolean | `false` | Disabled state |
+| `loading` | boolean | `false` | Loading state |
 
 ## Notes
 

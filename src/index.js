@@ -13,3 +13,4 @@ export { BASE_FONTS, BASE_FONT_WEIGHTS, BASE_FONT_SIZES } from './styles/base_ty
 // Components
 export { ToggleDarkLight } from './components/theme/ToggleDarkLight.jsx';
 export { useTheme } from './components/theme/useTheme.js';
+export { ButtonPrimary } from './components/buttons/ButtonPrimary.jsx';
