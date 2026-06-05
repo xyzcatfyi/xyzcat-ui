@@ -1,30 +1,64 @@
+---
+name: xyzcat-ui
+version: 0.4.0
+created: 2026-04-01
+updated: 2026-06-05
+description: Shared component library for the xyzcat ecosystem
+---
+
+
 # xyzcat-ui
 
-shared component library for the xyzcat ecosystem.
-not for public use. not sorry.
+Shared component library for the xyzcat ecosystem.
+Build once, use everywhere.
+
+Covers design tokens, typography, hooks, and UI components.
+Used across all xyzcat projects — standalone apps and Hub integrations alike.
 
 ---
 
-## Install
+
+## Installation
 
 ```bash
 npm install github:xyzcatfyi/xyzcat-ui
 ```
 
+Peer dependency — install separately:
+
+```bash
+npm install lucide-react
+```
+
 ---
+
 
 ## What's in here
 
+| Folder | Contents |
+|---|---|
+| `src/components/buttons/` | Button components |
+| `src/components/cards/` | Card components |
+| `src/components/modals/` | Modal and dialog components |
+| `src/components/tabs/` | Tab and nav components |
+| `src/components/theme/` | Dark/light mode toggle and theme hook |
+| `src/hooks/` | Shared React hooks |
+| `src/layouts/` | Layout components |
+| `src/styles/` | Design tokens and typography |
 
-### Tokens
 
-#### Flexoki (`flexoki_tokens.js`)
+---
+
+
+## Tokens
+---
+
+### Flexoki (`flexoki_tokens.js`)
 Dark/light colour tokens based on the [Flexoki palette](https://stephango.com/flexoki) (MIT).
 
 ```js
 import { DARK, LIGHT, ACCENT_KEYS } from 'xyzcat-ui';
 ```
-
 
 | Export | What it is |
 |---|---|
@@ -33,7 +67,8 @@ import { DARK, LIGHT, ACCENT_KEYS } from 'xyzcat-ui';
 | `ACCENT_KEYS` | List of available accent colour keys |
 
 
-#### Per-app accents
+### Per-app accents
+
 | App | Token | Dark | Light |
 |---|---|---|---|
 | Moolah | `gr` | `#879A39` | `#66800B` |
@@ -41,10 +76,10 @@ import { DARK, LIGHT, ACCENT_KEYS } from 'xyzcat-ui';
 | Hub | `pu` | `#8B7EC8` | `#5E409D` |
 | xyzcat-site | `ye` | `#AD8301` | `#7D5E00` |
 
----
 
-#### Typography (`flexoki_typography.js`)
+### Typography (`flexoki_typography.js`)
 Outfit + DM Mono. Loaded via Google Fonts.
+
 
 ```js
 import { FONTS, FONT_WEIGHTS, FONT_SIZES } from 'xyzcat-ui';
@@ -52,57 +87,56 @@ import { FONTS, FONT_WEIGHTS, FONT_SIZES } from 'xyzcat-ui';
 
 ---
 
-### Components
 
-#### ThemeToggle (`xyzcat-ui_ThemeToggle.jsx`)
+## Components
+---
+
+### ToggleDarkLight
 Dark/light mode toggle. Reads system preference, persists to localStorage as `xyzcat-theme`.
 
 ```jsx
-import { ThemeToggle, useTheme } from 'xyzcat-ui';
+import { ToggleDarkLight, useTheme } from 'xyzcat-ui';
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
 
-    return (
-      <div data-theme={theme}>
-        <ThemeToggle theme={theme} onToggle={toggleTheme} />
-      </div>
-    );
+  return (
+    <div data-theme={theme}>
+      <ToggleDarkLight theme={theme} onToggle={toggleTheme} />
+    </div>
+  );
 }
 ```
 
-#### useTheme (`xyzcat-ui_useTheme.js`)
+### useTheme
 Hook that manages theme state. Returns `{ theme, toggleTheme }`.
-Sets `data-theme` on the root element — all CSS variables resolve from there.
 
 ```js
 import { useTheme } from 'xyzcat-ui';
 const { theme, toggleTheme } = useTheme();
 ```
 
----
-
-## Structure
-
-```
-src/
-├── components/
-│   ├── theme/
-│   │   ├── xyzcat-ui_ThemeToggle.jsx
-│   │   └── xyzcat-ui_useTheme.js
-│   └── language/        ← coming soon
-├── styles/
-│   ├── flexoki_tokens.js
-│   └── flexoki_typography.js
-└── index.js
-```
+> ⚠️ `data-theme` must be on the element where `background` is applied — not on `body`.
 
 ---
 
-## Stack
-- React 18
-- Flexoki palette (MIT) — stephango.com/flexoki
-- Outfit + DM Mono via Google Fonts
+
+## Design System
+- **Palette:** Flexoki by Steph Ango — [stephango.com/flexoki](https://stephango.com/flexoki) (MIT)
+- **Typography:** Outfit + DM Mono (Google Fonts)
+- **Icons:** Lucide React
+
+---
+
+
+## Conventions
+See `CONVENTIONS.md` for naming, structure, and versioning rules.
+
+---
+
+
+## Changelog
+See `CHANGELOG.md` for version history.
 
 ---
 
