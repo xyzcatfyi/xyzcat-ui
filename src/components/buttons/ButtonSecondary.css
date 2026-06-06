@@ -1,0 +1,42 @@
+/* ============================================
+   ButtonSecondary
+   version: 0.1.0
+   Base monochrome theme — Flexoki applied on top via token overrides
+   ============================================ */
+
+/* --- Base --- */
+.btn--secondary {
+  background: transparent;
+  color: var(--tx);
+  border-color: var(--tx);
+}
+
+/* Hover */
+.btn--secondary:hover:not(:disabled) {
+  background: var(--ui);
+  border-color: var(--tx2);
+  color: var(--tx);
+}
+
+/* Active */
+.btn--secondary:active:not(:disabled) {
+  background: var(--ui2);
+  border-color: var(--tx3);
+}
+
+/* Focus */
+.btn--secondary:focus-visible {
+  outline: 2px solid var(--tx);
+  outline-offset: 2px;
+}
+
+/* Disabled */
+.btn--secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Loading */
+.btn--secondary.btn--loading {
+  cursor: wait;
+}

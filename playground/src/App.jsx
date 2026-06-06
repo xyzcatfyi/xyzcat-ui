@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus, ArrowRight } from 'lucide-react';
-import { useTheme, ToggleDarkLight, ButtonPrimary, LayoutHeaderText, LayoutFooter, NavBar, NavHamburger } from 'xyzcat-ui';
+import { useTheme, ToggleDarkLight, ButtonPrimary, ButtonSecondary, LayoutHeaderText, LayoutFooter, NavBar, NavHamburger } from 'xyzcat-ui';
 import './App.css';
 
 export default function App() {
@@ -47,6 +47,38 @@ export default function App() {
             <ButtonPrimary label="Default" onClick={() => {}} />
             <ButtonPrimary label="Disabled" onClick={() => {}} disabled />
             <ButtonPrimary label="Loading" onClick={() => {}} loading />
+          </div>
+        </section>
+
+        {/* ── ButtonSecondary ── */}
+        <section className="playground__section">
+          <h2>ButtonSecondary</h2>
+
+          <h3>Sizes</h3>
+          <div className="playground__row">
+            <ButtonSecondary label="Small" onClick={() => {}} size="sm" />
+            <ButtonSecondary label="Medium" onClick={() => {}} size="md" />
+            <ButtonSecondary label="Large" onClick={() => {}} size="lg" />
+          </div>
+
+          <h3>Shapes</h3>
+          <div className="playground__row">
+            <ButtonSecondary label="Rounded" onClick={() => {}} shape="rounded" />
+            <ButtonSecondary label="Pill" onClick={() => {}} shape="pill" />
+          </div>
+
+          <h3>Icons</h3>
+          <div className="playground__row">
+            <ButtonSecondary label="Icon Left" onClick={() => {}} iconLeft={<Plus />} />
+            <ButtonSecondary label="Icon Right" onClick={() => {}} iconRight={<ArrowRight />} />
+            <ButtonSecondary label="Both" onClick={() => {}} iconLeft={<Plus />} iconRight={<ArrowRight />} />
+          </div>
+
+          <h3>States</h3>
+          <div className="playground__row">
+            <ButtonSecondary label="Default" onClick={() => {}} />
+            <ButtonSecondary label="Disabled" onClick={() => {}} disabled />
+            <ButtonSecondary label="Loading" onClick={() => {}} loading />
           </div>
         </section>
 
