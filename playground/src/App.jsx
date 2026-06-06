@@ -1,10 +1,11 @@
 import React from 'react';
 import { Plus, ArrowRight } from 'lucide-react';
-import { useTheme, ToggleDarkLight, ButtonPrimary, LayoutHeaderText, LayoutFooter } from 'xyzcat-ui';
+import { useTheme, ToggleDarkLight, ButtonPrimary, LayoutHeaderText, LayoutFooter, NavBar } from 'xyzcat-ui';
 import './App.css';
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
+  const [activeTab, setActiveTab] = React.useState('overview');
 
   return (
     <div className="playground" data-theme={theme}>
@@ -63,6 +64,38 @@ export default function App() {
 
           <h3>Title only</h3>
           <LayoutHeaderText title="App Title" sticky={false} />
+
+        </section>
+
+        {/* ── NavBar ── */}
+        <section className="playground__section">
+          <h2>NavBar</h2>
+
+          <h3>Horizontal</h3>
+          <NavBar
+            orientation="horizontal"
+            items={[
+              { label: 'Overview', value: 'overview' },
+              { label: 'Transactions', value: 'transactions' },
+              { label: 'Settings', value: 'settings' },
+            ]}
+            activeItem={activeTab}
+            onItemClick={setActiveTab}
+          />
+
+          <h3>Vertical</h3>
+          <div style={{ width: '200px' }}>
+            <NavBar
+              orientation="vertical"
+              items={[
+                { label: 'Overview', value: 'overview' },
+                { label: 'Transactions', value: 'transactions' },
+                { label: 'Settings', value: 'settings' },
+              ]}
+              activeItem={activeTab}
+              onItemClick={setActiveTab}
+            />
+          </div>
 
         </section>
 

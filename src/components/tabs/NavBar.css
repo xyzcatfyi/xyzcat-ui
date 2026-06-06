@@ -1,0 +1,73 @@
+/* ============================================
+   NavBar
+   version: 0.1.0
+   Base monochrome theme — Flexoki applied on top via token overrides
+   ============================================ */
+
+/* --- Horizontal --- */
+.navbar--horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* --- Vertical --- */
+.navbar--vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+/* --- Item --- */
+.navbar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: none;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.4375rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  color: var(--tx2);
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+  white-space: nowrap;
+}
+
+.navbar__item:hover {
+  background: var(--ui);
+  color: var(--tx);
+}
+
+.navbar__item--active {
+  background: var(--ui);
+  color: var(--tx);
+}
+
+/* Vertical items full width */
+.navbar--vertical .navbar__item {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* --- Icon --- */
+.navbar__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* --- Mobile: hide labels in horizontal mode --- */
+@media (max-width: 600px) {
+  .navbar--horizontal .navbar__label {
+    display: none;
+  }
+
+  .navbar--horizontal .navbar__item {
+    padding: 0.5rem;
+  }
+}
