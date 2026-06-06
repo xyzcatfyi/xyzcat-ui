@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus, ArrowRight } from 'lucide-react';
-import { useTheme, ToggleDarkLight, ButtonPrimary, ButtonSecondary, LayoutHeaderText, LayoutFooter, NavBar, NavHamburger } from 'xyzcat-ui';
+import { useTheme, ToggleDarkLight, ButtonPrimary, ButtonSecondary, ButtonDestructive, LayoutHeaderText, LayoutFooter, NavBar, NavHamburger } from 'xyzcat-ui';
 import './App.css';
 
 export default function App() {
@@ -79,6 +79,38 @@ export default function App() {
             <ButtonSecondary label="Default" onClick={() => {}} />
             <ButtonSecondary label="Disabled" onClick={() => {}} disabled />
             <ButtonSecondary label="Loading" onClick={() => {}} loading />
+          </div>
+        </section>
+
+        {/* ── ButtonDestructive ── */}
+        <section className="playground__section">
+          <h2>ButtonDestructive</h2>
+
+          <h3>Sizes</h3>
+          <div className="playground__row">
+            <ButtonDestructive label="Small" onClick={() => {}} size="sm" />
+            <ButtonDestructive label="Medium" onClick={() => {}} size="md" />
+            <ButtonDestructive label="Large" onClick={() => {}} size="lg" />
+          </div>
+
+          <h3>Shapes</h3>
+          <div className="playground__row">
+            <ButtonDestructive label="Rounded" onClick={() => {}} shape="rounded" />
+            <ButtonDestructive label="Pill" onClick={() => {}} shape="pill" />
+          </div>
+
+          <h3>Icons</h3>
+          <div className="playground__row">
+            <ButtonDestructive label="Icon Left" onClick={() => {}} iconLeft={<Plus />} />
+            <ButtonDestructive label="Icon Right" onClick={() => {}} iconRight={<ArrowRight />} />
+            <ButtonDestructive label="Both" onClick={() => {}} iconLeft={<Plus />} iconRight={<ArrowRight />} />
+          </div>
+
+          <h3>States</h3>
+          <div className="playground__row">
+            <ButtonDestructive label="Default" onClick={() => {}} />
+            <ButtonDestructive label="Disabled" onClick={() => {}} disabled />
+            <ButtonDestructive label="Loading" onClick={() => {}} loading />
           </div>
         </section>
 

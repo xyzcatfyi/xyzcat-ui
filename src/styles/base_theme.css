@@ -16,6 +16,7 @@
   --tx3:  #999999;
   --tx2:  #666666;
   --tx:   #000000;
+  --re:   #C72828;
 
   --font-sans: system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
@@ -30,6 +31,7 @@
   --tx3:  #555555;
   --tx2:  #888888;
   --tx:   #FFFFFF;
+  --re:   #D15B5B;
 
   --font-sans: system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;

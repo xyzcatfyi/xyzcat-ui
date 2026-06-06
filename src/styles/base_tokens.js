@@ -14,6 +14,7 @@ export const BASE_DARK = {
   tx3:  '#555555',  // Faint text
   tx2:  '#888888',  // Muted text
   tx:   '#FFFFFF',  // Primary text
+  re:   '#D15B5B',  // Red — destructive actions
 };
 
 export const BASE_LIGHT = {
@@ -25,4 +26,5 @@ export const BASE_LIGHT = {
   tx3:  '#999999',  // Faint text
   tx2:  '#666666',  // Muted text
   tx:   '#000000',  // Primary text
+  re:   '#C72828',  // Red — destructive actions
 };

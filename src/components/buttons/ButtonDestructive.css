@@ -1,0 +1,42 @@
+/* ============================================
+   ButtonDestructive
+   version: 0.1.0
+   Base monochrome theme — Flexoki applied on top via token overrides
+   Uses --re token from base_theme.css
+   ============================================ */
+
+/* --- Destructive variant --- */
+.btn--destructive {
+  background: color-mix(in srgb, var(--re) 13%, transparent);
+  color: var(--re);
+  border-color: color-mix(in srgb, var(--re) 27%, transparent);
+}
+
+/* Hover */
+.btn--destructive:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--re) 20%, transparent);
+  border-color: var(--re);
+}
+
+/* Active */
+.btn--destructive:active:not(:disabled) {
+  background: color-mix(in srgb, var(--re) 27%, transparent);
+  border-color: var(--re);
+}
+
+/* Focus */
+.btn--destructive:focus-visible {
+  outline: 2px solid var(--re);
+  outline-offset: 2px;
+}
+
+/* Disabled */
+.btn--destructive:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Loading */
+.btn--destructive.btn--loading {
+  cursor: wait;
+}
