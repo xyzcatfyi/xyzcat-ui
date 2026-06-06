@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus, ArrowRight } from 'lucide-react';
-import { useTheme, ToggleDarkLight, ButtonPrimary, ButtonSecondary, ButtonDestructive, LayoutHeaderText, LayoutFooter, NavBar, NavHamburger } from 'xyzcat-ui';
+import { useTheme, ToggleDarkLight, ButtonPrimary, ButtonSecondary, ButtonDestructive, LayoutHeaderText, LayoutFooter, NavBar, NavHamburger, SettingsSection, SettingsRow } from 'xyzcat-ui';
 import './App.css';
 
 export default function App() {
@@ -190,6 +190,45 @@ export default function App() {
             ]}
           />
           </div>
+
+        </section>
+
+        {/* ── SettingsSection + SettingsRow ── */}
+        <section className="playground__section">
+          <h2>SettingsSection + SettingsRow</h2>
+
+          <SettingsSection title="General">
+            <SettingsRow
+              label="Appearance"
+              description="Switch between dark and light mode"
+            >
+              <ToggleDarkLight theme={theme} onToggle={toggleTheme} />
+            </SettingsRow>
+            <SettingsRow
+              label="Language"
+              description="Currently: English (UK)"
+            >
+              <span style={{ fontSize: '0.75rem', color: 'var(--tx3)' }}>Coming soon</span>
+            </SettingsRow>
+            <SettingsRow label="Version">
+              <span style={{ fontSize: '0.8125rem', color: 'var(--tx2)' }}>v0.1.0</span>
+            </SettingsRow>
+          </SettingsSection>
+
+          <SettingsSection title="Data">
+            <SettingsRow
+              label="Export"
+              description="Download your data as JSON, CSV, or PDF"
+            >
+              <ButtonSecondary label="Export" onClick={() => {}} size="sm" />
+            </SettingsRow>
+            <SettingsRow
+              label="Reset All Data"
+              description="Permanently delete everything — cannot be undone"
+            >
+              <ButtonDestructive label="Reset" onClick={() => {}} size="sm" />
+            </SettingsRow>
+          </SettingsSection>
 
         </section>
 

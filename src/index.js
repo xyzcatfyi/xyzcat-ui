@@ -20,5 +20,7 @@ export { NavBar } from './components/tabs/NavBar.jsx';
 export { NavHamburger } from './components/tabs/NavHamburger.jsx';
 export { ButtonSecondary } from './components/buttons/ButtonSecondary.jsx';
 export { ButtonDestructive } from './components/buttons/ButtonDestructive.jsx';
+export { SettingsSection } from './components/cards/SettingsSection.jsx';
+export { SettingsRow } from './components/cards/SettingsRow.jsx';
 
 

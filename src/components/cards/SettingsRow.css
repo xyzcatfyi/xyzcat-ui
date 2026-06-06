@@ -1,0 +1,45 @@
+/* ============================================
+   SettingsRow
+   version: 0.1.0
+   Base monochrome theme — Flexoki applied on top via token overrides
+   ============================================ */
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--ui);
+}
+
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+.settings-row__left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.settings-row__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--tx);
+  font-family: var(--font-sans);
+}
+
+.settings-row__description {
+  font-size: 0.75rem;
+  color: var(--tx3);
+  font-family: var(--font-sans);
+  line-height: 1.4;
+}
+
+.settings-row__right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
