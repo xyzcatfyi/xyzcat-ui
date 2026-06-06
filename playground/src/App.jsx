@@ -1,11 +1,12 @@
 import React from 'react';
 import { Plus, ArrowRight } from 'lucide-react';
-import { useTheme, ToggleDarkLight, ButtonPrimary, ButtonSecondary, ButtonDestructive, LayoutHeaderText, LayoutFooter, NavBar, NavHamburger, SettingsSection, SettingsRow } from 'xyzcat-ui';
+import { useTheme, ToggleDarkLight, ButtonPrimary, ButtonSecondary, ButtonDestructive, LayoutHeaderText, LayoutFooter, NavBar, NavHamburger, SettingsSection, SettingsRow, ModalConfirm } from 'xyzcat-ui';
 import './App.css';
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
   const [activeTab, setActiveTab] = React.useState('overview');
+  const [showModal, setShowModal] = React.useState(false);
 
   return (
     <div className="playground">
@@ -229,6 +230,28 @@ export default function App() {
               <ButtonDestructive label="Reset" onClick={() => {}} size="sm" />
             </SettingsRow>
           </SettingsSection>
+
+        </section>
+
+        {/* ── ModalConfirm ── */}
+        <section className="playground__section">
+          <h2>ModalConfirm</h2>
+
+          <h3>Destructive (default)</h3>
+          <div className="playground__row">
+            <ButtonDestructive label="Open Modal" onClick={() => setShowModal(true)} />
+          </div>
+
+          {showModal && (
+            <ModalConfirm
+              title="Reset All Data"
+              message="This will permanently delete all your data. This cannot be undone."
+              confirmLabel="Yes, Reset Everything"
+              cancelLabel="Cancel"
+              onConfirm={() => { alert('Confirmed!'); setShowModal(false); }}
+              onClose={() => setShowModal(false)}
+            />
+          )}
 
         </section>
 

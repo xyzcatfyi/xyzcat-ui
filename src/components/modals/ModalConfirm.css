@@ -1,0 +1,79 @@
+/* ============================================
+   ModalConfirm
+   version: 0.1.0
+   Base monochrome theme — Flexoki applied on top via token overrides
+   ============================================ */
+
+/* --- Overlay --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  backdrop-filter: blur(2px);
+}
+
+/* --- Modal box --- */
+.modal {
+  background: var(--bg2);
+  border: 1px solid var(--ui);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  width: 90%;
+  max-width: 380px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* --- Header --- */
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--tx);
+  font-family: var(--font-sans);
+}
+
+.modal__close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--tx3);
+  line-height: 1;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: color 150ms ease;
+}
+
+.modal__close:hover {
+  color: var(--tx);
+}
+
+/* --- Message --- */
+.modal__message {
+  font-size: 0.875rem;
+  color: var(--tx2);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Actions --- */
+.modal__actions {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: flex-end;
+}
