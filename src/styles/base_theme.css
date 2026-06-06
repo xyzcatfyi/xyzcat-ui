@@ -1,0 +1,36 @@
+/* ============================================
+   base_theme.css
+   version: 0.1.0
+   created: 06-06-2026
+   updated: 06-06-2026
+   description: CSS variable injection for base monochrome theme.
+   Apply data-theme="dark" or data-theme="light" to the root element.
+   ============================================ */
+
+[data-theme="light"] {
+  --bg:   #FFFFFF;
+  --bg2:  #F5F5F5;
+  --ui:   #E0E0E0;
+  --ui2:  #CCCCCC;
+  --ui3:  #BBBBBB;
+  --tx3:  #999999;
+  --tx2:  #666666;
+  --tx:   #000000;
+
+  --font-sans: system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+}
+
+[data-theme="dark"] {
+  --bg:   #000000;
+  --bg2:  #111111;
+  --ui:   #222222;
+  --ui2:  #333333;
+  --ui3:  #444444;
+  --tx3:  #555555;
+  --tx2:  #888888;
+  --tx:   #FFFFFF;
+
+  --font-sans: system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+}

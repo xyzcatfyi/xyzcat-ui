@@ -1,0 +1,97 @@
+/* ============================================
+   NavHamburger
+   version: 0.1.0
+   Base monochrome theme — Flexoki applied on top via token overrides
+   ============================================ */
+
+.hamburger {
+  position: relative;
+  display: inline-block;
+}
+
+/* --- Toggle button --- */
+.hamburger__btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  transition: background 150ms ease;
+}
+
+.hamburger__btn:hover {
+  background: var(--ui);
+}
+
+/* --- Bars --- */
+.hamburger__bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--tx);
+  border-radius: 99px;
+  transition: transform 150ms ease, opacity 150ms ease;
+  transform-origin: center;
+}
+
+/* Animate to X when open */
+.hamburger__btn--open .hamburger__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger__btn--open .hamburger__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger__btn--open .hamburger__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Dropdown --- */
+.hamburger__menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  min-width: 160px;
+  background: var(--bg2);
+  border: 1px solid var(--ui);
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  z-index: 200;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger__menu--right {
+  right: 0;
+}
+
+.hamburger__menu--left {
+  left: 0;
+}
+
+/* --- Items --- */
+.hamburger__item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  color: var(--tx);
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.hamburger__item:hover {
+  background: var(--ui);
+}

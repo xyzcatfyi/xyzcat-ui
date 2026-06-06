@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus, ArrowRight } from 'lucide-react';
-import { useTheme, ToggleDarkLight, ButtonPrimary, LayoutHeaderText, LayoutFooter, NavBar } from 'xyzcat-ui';
+import { useTheme, ToggleDarkLight, ButtonPrimary, LayoutHeaderText, LayoutFooter, NavBar, NavHamburger } from 'xyzcat-ui';
 import './App.css';
 
 export default function App() {
@@ -95,6 +95,36 @@ export default function App() {
               activeItem={activeTab}
               onItemClick={setActiveTab}
             />
+          </div>
+
+        </section>
+
+        {/* ── NavHamburger ── */}
+        <section className="playground__section">
+          <h2>NavHamburger</h2>
+
+          <h3>Align right</h3>
+          <div className="playground__row" style={{ background: '#eee', padding: '1rem' }}>
+            <NavHamburger
+            align="right"
+            items={[
+              { label: 'Overview', value: 'overview', onClick: () => {} },
+              { label: 'Transactions', value: 'transactions', onClick: () => {} },
+              { label: 'Settings', value: 'settings', onClick: () => {} },
+            ]}
+          />
+          </div>
+
+          <h3>Align left (default)</h3>
+          <div className="playground__row" style={{ background: '#eee', padding: '1rem' }}>
+            <NavHamburger
+            align="left"
+            items={[
+              { label: 'Overview', value: 'overview', onClick: () => {} },
+              { label: 'Transactions', value: 'transactions', onClick: () => {} },
+              { label: 'Settings', value: 'settings', onClick: () => {} },
+            ]}
+          />
           </div>
 
         </section>

@@ -17,4 +17,5 @@ export { ButtonPrimary } from './components/buttons/ButtonPrimary.jsx';
 export { LayoutHeaderText } from './layouts/LayoutHeaderText.jsx';
 export { LayoutFooter } from './layouts/LayoutFooter.jsx';
 export { NavBar } from './components/tabs/NavBar.jsx';
+export { NavHamburger } from './components/tabs/NavHamburger.jsx';
 
