@@ -15,3 +15,5 @@ export { ToggleDarkLight } from './components/theme/ToggleDarkLight.jsx';
 export { useTheme } from './components/theme/useTheme.js';
 export { ButtonPrimary } from './components/buttons/ButtonPrimary.jsx';
 export { LayoutHeaderText } from './layouts/LayoutHeaderText.jsx';
+export { LayoutFooter } from './layouts/LayoutFooter.jsx';
+

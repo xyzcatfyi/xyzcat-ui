@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus, ArrowRight } from 'lucide-react';
-import { useTheme, ToggleDarkLight, ButtonPrimary, LayoutHeaderText } from 'xyzcat-ui';
+import { useTheme, ToggleDarkLight, ButtonPrimary, LayoutHeaderText, LayoutFooter } from 'xyzcat-ui';
 import './App.css';
 
 export default function App() {
@@ -67,6 +67,10 @@ export default function App() {
         </section>
 
       </main>
+
+      <LayoutFooter>
+        xyzcat-ui playground · not a product 🩷
+      </LayoutFooter>
     </div>
   );
 }

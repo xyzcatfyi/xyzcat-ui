@@ -1,0 +1,36 @@
+/* ============================================
+   LayoutFooter
+   version: 0.1.0
+   Base monochrome theme — Flexoki applied on top via token overrides
+   ============================================ */
+
+.layout-footer {
+  width: 100%;
+  background: var(--bg2);
+  border-top: 1px solid var(--ui);
+  padding: 0 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.layout-footer__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  font-size: 0.75rem;
+  color: var(--tx3);
+  font-family: var(--font-sans);
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .layout-footer {
+    padding: 0 1rem;
+  }
+}
