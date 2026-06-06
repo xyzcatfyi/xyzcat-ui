@@ -8,7 +8,7 @@ export default function App() {
   const [activeTab, setActiveTab] = React.useState('overview');
 
   return (
-    <div className="playground" data-theme={theme}>
+    <div className="playground">
 
       <LayoutHeaderText
         title="xyzcat-ui playground"

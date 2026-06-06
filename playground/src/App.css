@@ -5,8 +5,8 @@
 
 .playground {
   min-height: 100vh;
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--bg);
+  color: var(--tx);
   font-family: var(--font-sans);
   padding: 2rem 2rem 5rem 2rem;
 }
