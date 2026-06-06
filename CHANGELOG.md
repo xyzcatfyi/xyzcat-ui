@@ -7,6 +7,15 @@ updated: 2026-06-05
 
 # Changelog
 
+## v0.6.0 — 06-06-2026
+### Added
+- `LayoutHeaderText` — app header with text title, optional subtitle, right slot, sticky prop
+- `LayoutFooter` — fixed footer with centered content slot
+- `NavBar` — navigation bar, horizontal and vertical orientations
+### Changed
+- Playground updated to test all new components
+- Playground `App.css` updated — bottom padding added for fixed footer
+
 ## v0.5.0 — 05-06-2026
 ### Added
 - `CONVENTIONS.md` — naming, structure, and versioning rules for the repo
