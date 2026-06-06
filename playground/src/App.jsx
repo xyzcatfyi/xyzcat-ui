@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus, ArrowRight } from 'lucide-react';
-import { useTheme, ToggleDarkLight, ButtonPrimary } from 'xyzcat-ui';
+import { useTheme, ToggleDarkLight, ButtonPrimary, LayoutHeaderText } from 'xyzcat-ui';
 import './App.css';
 
 export default function App() {
@@ -8,10 +8,12 @@ export default function App() {
 
   return (
     <div className="playground" data-theme={theme}>
-      <header className="playground__header">
-        <h1>xyzcat-ui playground</h1>
-        <ToggleDarkLight theme={theme} onToggle={toggleTheme} />
-      </header>
+
+      <LayoutHeaderText
+        title="xyzcat-ui playground"
+        subtitle="component testing area"
+        right={<ToggleDarkLight theme={theme} onToggle={toggleTheme} />}
+      />
 
       <main className="playground__main">
 
@@ -45,6 +47,23 @@ export default function App() {
             <ButtonPrimary label="Disabled" onClick={() => {}} disabled />
             <ButtonPrimary label="Loading" onClick={() => {}} loading />
           </div>
+        </section>
+
+        {/* ── LayoutHeaderText ── */}
+        <section className="playground__section">
+          <h2>LayoutHeaderText</h2>
+
+          <h3>With subtitle + right slot</h3>
+          <LayoutHeaderText
+            title="App Title"
+            subtitle="v1.0.0 · beta"
+            right={<ButtonPrimary label="Action" onClick={() => {}} size="sm" />}
+            sticky={false}
+          />
+
+          <h3>Title only</h3>
+          <LayoutHeaderText title="App Title" sticky={false} />
+
         </section>
 
       </main>

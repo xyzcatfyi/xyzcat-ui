@@ -11,21 +11,6 @@
   padding: 2rem;
 }
 
-.playground__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 3rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-ui);
-}
-
-.playground__header h1 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0;
-}
-
 .playground__main {
   display: flex;
   flex-direction: column;
