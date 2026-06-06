@@ -7,6 +7,19 @@ updated: 2026-06-05
 
 # Changelog
 
+## v0.7.0 — 06-06-2026
+### Added
+- `ButtonSecondary` — outlined, transparent background, less prominent than primary
+- `ButtonDestructive` — red tones, signals danger, uses `--re` token
+- `--re` token added to `base_tokens.js` and `base_theme.css`
+- `base_theme.css` — CSS variable injection file for base monochrome theme
+### Fixed
+- Dark/light toggle now fully working in playground
+- `LayoutHeaderText` changed to `position: fixed`
+- Playground z-index and padding fixes
+- Token variable names corrected in playground CSS
+
+
 ## v0.6.0 — 06-06-2026
 ### Added
 - `LayoutHeaderText` — app header with text title, optional subtitle, right slot, sticky prop
@@ -15,6 +28,7 @@ updated: 2026-06-05
 ### Changed
 - Playground updated to test all new components
 - Playground `App.css` updated — bottom padding added for fixed footer
+
 
 ## v0.5.0 — 05-06-2026
 ### Added
@@ -27,15 +41,18 @@ updated: 2026-06-05
 - Component rename pending: `xyzcat-ui_ThemeToggle.jsx` → `ToggleDarkLight.jsx` (naming convention applied — file rename in next commit)
 - Component rename pending: `xyzcat-ui_useTheme.js` → `useTheme.js` (same)
 
+
 ## v0.4.0 — 23-05-2026
 ### Added
 - `base_tokens.js` — monochrome dark/light theme tokens
 - `base_typography.js` — system-ui fonts, no Google Fonts dependency
 - Both exported from `index.js` under "Base (Monochrome) Theme"
 
+
 ## v0.3.1 — 19-05-2026
 ### Fixed
 - Added `FONTS.import` to typography exports — Google Fonts URL now accessible via `FONTS.import`
+
 
 ## v0.3.0 — 19-05-2026
 ### Changed
@@ -47,11 +64,13 @@ updated: 2026-06-05
 ### Added
 - `package.json` — xyzcat-ui is now installable as a proper npm package via GitHub
 
+
 ## v0.2.0 — 19-05-2026
 ### Changed
 - Reorganised components: `ThemeToggle/` → `theme/` subfolder
 - Added empty `language/` folder — placeholder for LanguageSwitcher
 - Updated `index.js` export paths accordingly
+
 
 ## v0.1.0 — 16-05-2026
 ### Added

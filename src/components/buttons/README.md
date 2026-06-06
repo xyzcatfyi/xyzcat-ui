@@ -1,8 +1,8 @@
 ---
 name: buttons
-version: 0.2.0
+version: 0.4.0
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-06-06
 description: Button components for the xyzcat-ui library
 ---
 
@@ -18,26 +18,20 @@ Variants are defined by component name, not by props.
 | Component | Description |
 |---|---|
 | `ButtonPrimary` | Primary action button. Reference component for the button system. |
-| `ButtonSecondary` | Secondary action — not yet built |
-| `ButtonDestructive` | Destructive or irreversible actions — not yet built |
+| `ButtonSecondary` | Secondary action — outlined, less prominent than primary |
+| `ButtonDestructive` | Destructive or irreversible actions — red tones |
 
 ## Usage
 
 ```jsx
-import { ButtonPrimary } from 'xyzcat-ui';
+import { ButtonPrimary, ButtonSecondary, ButtonDestructive } from 'xyzcat-ui';
 
-<ButtonPrimary
-  label="Save"
-  onClick={handleSave}
-  shape="rounded"
-  size="md"
-  iconLeft={<Plus />}
-  disabled={false}
-  loading={false}
-/>
+<ButtonPrimary label="Save" onClick={handleSave} />
+<ButtonSecondary label="Cancel" onClick={handleCancel} />
+<ButtonDestructive label="Delete" onClick={handleDelete} />
 ```
 
-## Props — ButtonPrimary
+## Props — all button components
 
 | Prop | Type | Default | Description |
 |---|---|---|---|
@@ -52,4 +46,5 @@ import { ButtonPrimary } from 'xyzcat-ui';
 
 ## Notes
 
-See `CHANGELOG.md` for version history.
+- `ButtonDestructive` uses `--re` CSS variable — defined in `base_theme.css`
+- See `CHANGELOG.md` for version history
