@@ -120,6 +120,8 @@ Component files include a header comment block:
 - Follows semver: `MAJOR.MINOR.PATCH`
 - Version lives in frontmatter and changelog
 - Filename versioning only when two versions coexist in repo
+- **One minor version bump per day maximum**
+- Multiple changes in the same day use patch increments: `0.7.1`, `0.7.2`, etc.
 
 ---
 
