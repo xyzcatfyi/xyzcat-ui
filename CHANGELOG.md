@@ -1,11 +1,23 @@
 ---
 name: xyzcat-ui — changelog
-version: 0.5.0
+version: 0.8.0
 created: 2026-04-16
-updated: 2026-06-05
+updated: 2026-06-06
 ---
 
 # Changelog
+
+## v0.8.0 — 07-06-2026
+### Added
+- `DataExportImport` — export/import panel with JSON, CSV, and PDF format support
+
+
+## v0.7.1 — 06-06-2026
+### Added
+- `SettingsSection` — settings section wrapper with title and grouped rows
+- `SettingsRow` — single settings row with label, optional description, and right-side control slot
+- `ModalConfirm` — confirmation dialog for destructive or irreversible actions; supports `destructive` prop
+
 
 ## v0.7.0 — 06-06-2026
 ### Added
