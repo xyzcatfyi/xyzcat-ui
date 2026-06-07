@@ -3,6 +3,11 @@
   "version": "0.2.0",
   "description": "Shared component library for the xyzcat ecosystem.",
   "main": "src/index.js",
+  "module": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./src/styles/*": "./src/styles/*"
+  },
   "type": "module",
   "repository": {
     "type": "git",
