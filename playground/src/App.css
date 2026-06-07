@@ -3,6 +3,14 @@
    Testing area only — not part of the library
    ============================================ */
 
+
+html,
+body {
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+}
+
 .playground {
   min-height: 100vh;
   background: var(--bg);

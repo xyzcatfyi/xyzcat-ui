@@ -1,16 +1,29 @@
-import React from 'react';
-import { Plus, ArrowRight } from 'lucide-react';
-import { useTheme, ToggleDarkLight, ButtonPrimary, ButtonSecondary, ButtonDestructive, LayoutHeaderText, LayoutFooter, NavBar, NavHamburger, SettingsSection, SettingsRow, ModalConfirm } from 'xyzcat-ui';
-import './App.css';
+import React from "react";
+import { Plus, ArrowRight } from "lucide-react";
+import {
+  useTheme,
+  ToggleDarkLight,
+  ButtonPrimary,
+  ButtonSecondary,
+  ButtonDestructive,
+  LayoutHeaderText,
+  LayoutFooter,
+  NavBar,
+  NavHamburger,
+  SettingsSection,
+  SettingsRow,
+  ModalConfirm,
+  DataExportImport,
+} from "xyzcat-ui";
+import "./App.css";
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
-  const [activeTab, setActiveTab] = React.useState('overview');
+  const [activeTab, setActiveTab] = React.useState("overview");
   const [showModal, setShowModal] = React.useState(false);
 
   return (
     <div className="playground">
-
       <LayoutHeaderText
         title="xyzcat-ui playground"
         subtitle="component testing area"
@@ -18,7 +31,6 @@ export default function App() {
       />
 
       <main className="playground__main">
-
         {/* ── Buttons ── */}
         <section className="playground__section">
           <h2>ButtonPrimary</h2>
@@ -38,9 +50,22 @@ export default function App() {
 
           <h3>Icons</h3>
           <div className="playground__row">
-            <ButtonPrimary label="Icon Left" onClick={() => {}} iconLeft={<Plus />} />
-            <ButtonPrimary label="Icon Right" onClick={() => {}} iconRight={<ArrowRight />} />
-            <ButtonPrimary label="Both" onClick={() => {}} iconLeft={<Plus />} iconRight={<ArrowRight />} />
+            <ButtonPrimary
+              label="Icon Left"
+              onClick={() => {}}
+              iconLeft={<Plus />}
+            />
+            <ButtonPrimary
+              label="Icon Right"
+              onClick={() => {}}
+              iconRight={<ArrowRight />}
+            />
+            <ButtonPrimary
+              label="Both"
+              onClick={() => {}}
+              iconLeft={<Plus />}
+              iconRight={<ArrowRight />}
+            />
           </div>
 
           <h3>States</h3>
@@ -64,15 +89,32 @@ export default function App() {
 
           <h3>Shapes</h3>
           <div className="playground__row">
-            <ButtonSecondary label="Rounded" onClick={() => {}} shape="rounded" />
+            <ButtonSecondary
+              label="Rounded"
+              onClick={() => {}}
+              shape="rounded"
+            />
             <ButtonSecondary label="Pill" onClick={() => {}} shape="pill" />
           </div>
 
           <h3>Icons</h3>
           <div className="playground__row">
-            <ButtonSecondary label="Icon Left" onClick={() => {}} iconLeft={<Plus />} />
-            <ButtonSecondary label="Icon Right" onClick={() => {}} iconRight={<ArrowRight />} />
-            <ButtonSecondary label="Both" onClick={() => {}} iconLeft={<Plus />} iconRight={<ArrowRight />} />
+            <ButtonSecondary
+              label="Icon Left"
+              onClick={() => {}}
+              iconLeft={<Plus />}
+            />
+            <ButtonSecondary
+              label="Icon Right"
+              onClick={() => {}}
+              iconRight={<ArrowRight />}
+            />
+            <ButtonSecondary
+              label="Both"
+              onClick={() => {}}
+              iconLeft={<Plus />}
+              iconRight={<ArrowRight />}
+            />
           </div>
 
           <h3>States</h3>
@@ -96,15 +138,32 @@ export default function App() {
 
           <h3>Shapes</h3>
           <div className="playground__row">
-            <ButtonDestructive label="Rounded" onClick={() => {}} shape="rounded" />
+            <ButtonDestructive
+              label="Rounded"
+              onClick={() => {}}
+              shape="rounded"
+            />
             <ButtonDestructive label="Pill" onClick={() => {}} shape="pill" />
           </div>
 
           <h3>Icons</h3>
           <div className="playground__row">
-            <ButtonDestructive label="Icon Left" onClick={() => {}} iconLeft={<Plus />} />
-            <ButtonDestructive label="Icon Right" onClick={() => {}} iconRight={<ArrowRight />} />
-            <ButtonDestructive label="Both" onClick={() => {}} iconLeft={<Plus />} iconRight={<ArrowRight />} />
+            <ButtonDestructive
+              label="Icon Left"
+              onClick={() => {}}
+              iconLeft={<Plus />}
+            />
+            <ButtonDestructive
+              label="Icon Right"
+              onClick={() => {}}
+              iconRight={<ArrowRight />}
+            />
+            <ButtonDestructive
+              label="Both"
+              onClick={() => {}}
+              iconLeft={<Plus />}
+              iconRight={<ArrowRight />}
+            />
           </div>
 
           <h3>States</h3>
@@ -123,13 +182,14 @@ export default function App() {
           <LayoutHeaderText
             title="App Title"
             subtitle="v1.0.0 · beta"
-            right={<ButtonPrimary label="Action" onClick={() => {}} size="sm" />}
+            right={
+              <ButtonPrimary label="Action" onClick={() => {}} size="sm" />
+            }
             sticky={false}
           />
 
           <h3>Title only</h3>
           <LayoutHeaderText title="App Title" sticky={false} />
-
         </section>
 
         {/* ── NavBar ── */}
@@ -140,28 +200,27 @@ export default function App() {
           <NavBar
             orientation="horizontal"
             items={[
-              { label: 'Overview', value: 'overview' },
-              { label: 'Transactions', value: 'transactions' },
-              { label: 'Settings', value: 'settings' },
+              { label: "Overview", value: "overview" },
+              { label: "Transactions", value: "transactions" },
+              { label: "Settings", value: "settings" },
             ]}
             activeItem={activeTab}
             onItemClick={setActiveTab}
           />
 
           <h3>Vertical</h3>
-          <div style={{ width: '200px' }}>
+          <div style={{ width: "200px" }}>
             <NavBar
               orientation="vertical"
               items={[
-                { label: 'Overview', value: 'overview' },
-                { label: 'Transactions', value: 'transactions' },
-                { label: 'Settings', value: 'settings' },
+                { label: "Overview", value: "overview" },
+                { label: "Transactions", value: "transactions" },
+                { label: "Settings", value: "settings" },
               ]}
               activeItem={activeTab}
               onItemClick={setActiveTab}
             />
           </div>
-
         </section>
 
         {/* ── NavHamburger ── */}
@@ -169,29 +228,42 @@ export default function App() {
           <h2>NavHamburger</h2>
 
           <h3>Align right</h3>
-          <div className="playground__row" style={{ background: '#eee', padding: '1rem' }}>
+          <div
+            className="playground__row"
+            style={{ background: "#eee", padding: "1rem" }}
+          >
             <NavHamburger
-            align="right"
-            items={[
-              { label: 'Overview', value: 'overview', onClick: () => {} },
-              { label: 'Transactions', value: 'transactions', onClick: () => {} },
-              { label: 'Settings', value: 'settings', onClick: () => {} },
-            ]}
-          />
+              align="right"
+              items={[
+                { label: "Overview", value: "overview", onClick: () => {} },
+                {
+                  label: "Transactions",
+                  value: "transactions",
+                  onClick: () => {},
+                },
+                { label: "Settings", value: "settings", onClick: () => {} },
+              ]}
+            />
           </div>
 
           <h3>Align left (default)</h3>
-          <div className="playground__row" style={{ background: '#eee', padding: '1rem' }}>
+          <div
+            className="playground__row"
+            style={{ background: "#eee", padding: "1rem" }}
+          >
             <NavHamburger
-            align="left"
-            items={[
-              { label: 'Overview', value: 'overview', onClick: () => {} },
-              { label: 'Transactions', value: 'transactions', onClick: () => {} },
-              { label: 'Settings', value: 'settings', onClick: () => {} },
-            ]}
-          />
+              align="left"
+              items={[
+                { label: "Overview", value: "overview", onClick: () => {} },
+                {
+                  label: "Transactions",
+                  value: "transactions",
+                  onClick: () => {},
+                },
+                { label: "Settings", value: "settings", onClick: () => {} },
+              ]}
+            />
           </div>
-
         </section>
 
         {/* ── SettingsSection + SettingsRow ── */}
@@ -205,14 +277,15 @@ export default function App() {
             >
               <ToggleDarkLight theme={theme} onToggle={toggleTheme} />
             </SettingsRow>
-            <SettingsRow
-              label="Language"
-              description="Currently: English (UK)"
-            >
-              <span style={{ fontSize: '0.75rem', color: 'var(--tx3)' }}>Coming soon</span>
+            <SettingsRow label="Language" description="Currently: English (UK)">
+              <span style={{ fontSize: "0.75rem", color: "var(--tx3)" }}>
+                Coming soon
+              </span>
             </SettingsRow>
             <SettingsRow label="Version">
-              <span style={{ fontSize: '0.8125rem', color: 'var(--tx2)' }}>v0.1.0</span>
+              <span style={{ fontSize: "0.8125rem", color: "var(--tx2)" }}>
+                v0.1.0
+              </span>
             </SettingsRow>
           </SettingsSection>
 
@@ -230,7 +303,6 @@ export default function App() {
               <ButtonDestructive label="Reset" onClick={() => {}} size="sm" />
             </SettingsRow>
           </SettingsSection>
-
         </section>
 
         {/* ── ModalConfirm ── */}
@@ -239,7 +311,10 @@ export default function App() {
 
           <h3>Destructive (default)</h3>
           <div className="playground__row">
-            <ButtonDestructive label="Open Modal" onClick={() => setShowModal(true)} />
+            <ButtonDestructive
+              label="Open Modal"
+              onClick={() => setShowModal(true)}
+            />
           </div>
 
           {showModal && (
@@ -248,18 +323,36 @@ export default function App() {
               message="This will permanently delete all your data. This cannot be undone."
               confirmLabel="Yes, Reset Everything"
               cancelLabel="Cancel"
-              onConfirm={() => { alert('Confirmed!'); setShowModal(false); }}
+              onConfirm={() => {
+                alert("Confirmed!");
+                setShowModal(false);
+              }}
               onClose={() => setShowModal(false)}
             />
           )}
-
         </section>
 
+        {/* ── DataExportImport ── */}
+        <section className="playground__section">
+          <h2>DataExportImport</h2>
+
+          <h3>With reset</h3>
+          <DataExportImport
+            data={{ name: "test", value: 42, items: ["a", "b", "c"] }}
+            onImport={(data) => console.log("imported:", data)}
+            showReset={true}
+            onReset={() => console.log("reset!")}
+          />
+
+          <h3>Without reset</h3>
+          <DataExportImport
+            data={{ name: "test", value: 42 }}
+            onImport={(data) => console.log("imported:", data)}
+          />
+        </section>
       </main>
 
-      <LayoutFooter>
-        xyzcat-ui playground · not a product 🩷
-      </LayoutFooter>
+      <LayoutFooter>xyzcat-ui playground · not a product 🩷</LayoutFooter>
     </div>
   );
 }
