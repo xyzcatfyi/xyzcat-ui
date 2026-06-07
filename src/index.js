@@ -23,5 +23,6 @@ export { ButtonDestructive } from './components/buttons/ButtonDestructive.jsx';
 export { SettingsSection } from './components/cards/SettingsSection.jsx';
 export { SettingsRow } from './components/cards/SettingsRow.jsx';
 export { ModalConfirm } from './components/modals/ModalConfirm.jsx';
+export { DataExportImport } from './components/data/DataExportImport.jsx';
 
 

@@ -1,0 +1,140 @@
+/* ============================================
+   DataExportImport
+   version: 0.1.0
+   Base monochrome theme — Flexoki applied on top via token overrides
+   ============================================ */
+
+/* --- Container --- */
+.dei {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: var(--bg2);
+  border: 1px solid var(--ui);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  font-family: var(--font-sans);
+}
+
+/* --- Format picker --- */
+.dei__picker {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--ui2);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.dei__format {
+  flex: 1;
+  background: none;
+  border: none;
+  border-right: 1px solid var(--ui2);
+  color: var(--tx2);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.dei__format:last-child {
+  border-right: none;
+}
+
+.dei__format:hover:not(.dei__format--active) {
+  background: var(--ui);
+  color: var(--tx);
+}
+
+.dei__format--active {
+  background: var(--tx);
+  color: var(--bg);
+}
+
+/* --- Actions row --- */
+.dei__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* --- Buttons --- */
+.dei__btn {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.45rem 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+  white-space: nowrap;
+}
+
+.dei__btn--export {
+  background: var(--tx);
+  color: var(--bg);
+  border-color: var(--tx);
+}
+
+.dei__btn--export:hover {
+  background: var(--tx2);
+  border-color: var(--tx2);
+}
+
+.dei__btn--export:active {
+  background: var(--tx3);
+  border-color: var(--tx3);
+}
+
+.dei__btn--export:focus-visible {
+  outline: 2px solid var(--tx);
+  outline-offset: 2px;
+}
+
+.dei__btn--import {
+  background: none;
+  color: var(--tx);
+  border-color: var(--ui2);
+}
+
+.dei__btn--import:hover {
+  background: var(--ui);
+  border-color: var(--ui3);
+}
+
+.dei__btn--import:active {
+  background: var(--ui2);
+}
+
+.dei__btn--import:focus-visible {
+  outline: 2px solid var(--tx);
+  outline-offset: 2px;
+}
+
+.dei__btn--reset {
+  background: none;
+  color: var(--re);
+  border-color: var(--re);
+}
+
+.dei__btn--reset:hover {
+  background: var(--re);
+  color: var(--bg);
+}
+
+.dei__btn--reset:active {
+  opacity: 0.85;
+}
+
+.dei__btn--reset:focus-visible {
+  outline: 2px solid var(--re);
+  outline-offset: 2px;
+}
+
+/* --- Hidden file input --- */
+.dei__file-input {
+  display: none;
+}
