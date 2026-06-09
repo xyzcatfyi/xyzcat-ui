@@ -1,11 +1,18 @@
 ---
 name: xyzcat-ui — changelog
-version: 0.8.0
+version: 0.8.1
 created: 2026-04-16
-updated: 2026-06-06
+updated: 2026-06-09
 ---
 
 # Changelog
+
+
+## v0.8.1 — 09-06-2026
+### Fixed
+- `NavBar` — mobile invisible items when no icon provided; smart label fallback added; `showLabels` prop for explicit override
+- `DataExportImport` — added `dataTransform` prop to shape data before export; default is passthrough
+
 
 ## v0.8.0 — 07-06-2026
 ### Added
