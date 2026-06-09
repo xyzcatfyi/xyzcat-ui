@@ -14,6 +14,7 @@ import {
   SettingsRow,
   ModalConfirm,
   DataExportImport,
+  IconPlaceholder,
 } from "xyzcat-ui";
 import "./App.css";
 
@@ -348,6 +349,43 @@ export default function App() {
           <DataExportImport
             data={{ name: "test", value: 42 }}
             onImport={(data) => console.log("imported:", data)}
+          />
+        </section>
+
+        {/* ── IconPlaceholder ── */}
+        <section className="playground__section">
+          <h2>IconPlaceholder</h2>
+
+          <h3>Sizes</h3>
+          <div className="playground__row">
+            <IconPlaceholder size={16} />
+            <IconPlaceholder size={18} />
+            <IconPlaceholder size={24} />
+            <IconPlaceholder size={32} />
+          </div>
+
+          <h3>In context — NavBar with placeholder icons</h3>
+          <NavBar
+            orientation="horizontal"
+            items={[
+              {
+                label: "Overview",
+                value: "overview",
+                icon: () => <IconPlaceholder size={15} />,
+              },
+              {
+                label: "Transactions",
+                value: "transactions",
+                icon: () => <IconPlaceholder size={15} />,
+              },
+              {
+                label: "Settings",
+                value: "settings",
+                icon: () => <IconPlaceholder size={15} />,
+              },
+            ]}
+            activeItem={activeTab}
+            onItemClick={setActiveTab}
           />
         </section>
       </main>
