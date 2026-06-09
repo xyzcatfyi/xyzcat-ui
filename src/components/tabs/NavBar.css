@@ -61,9 +61,9 @@
   flex-shrink: 0;
 }
 
-/* --- Mobile: hide labels in horizontal mode --- */
+/* --- Mobile: hide labels in horizontal mode unless showLabels or no icon --- */
 @media (max-width: 600px) {
-  .navbar--horizontal .navbar__label {
+  .navbar--horizontal:not(.navbar--show-labels) .navbar__label--has-icon {
     display: none;
   }
 
