@@ -3,7 +3,7 @@
    (>o.o<)
 ~~(   Y  )
 
-> xyzcat ecosystem · est. 2026
+> private repo · xyzcat ecosystem · est. 2026
 ```
 
 ---
