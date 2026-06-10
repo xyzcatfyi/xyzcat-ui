@@ -1,6 +1,6 @@
 {
   "name": "xyzcat-ui",
-  "version": "0.2.0",
+  "version": "0.9.0",
   "description": "Shared component library for the xyzcat ecosystem.",
   "main": "src/index.js",
   "module": "src/index.js",
