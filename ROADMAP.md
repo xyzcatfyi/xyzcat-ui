@@ -90,3 +90,4 @@ Components confirmed missing, reference in `hub/src/pages/Finance.jsx`:
 | Hub `Finance.jsx` local components | Replace with xyzcat-ui imports | During Hub migration         |
 | Hub duplicate ThemeToggle          | Remove                         | During Hub migration         |
 
+---
