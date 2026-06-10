@@ -1,10 +1,20 @@
-# xyzcat-ui — Conventions
-version: 0.1.0
-created: 05-06-2026
-updated: 05-06-2026
+```
+    /\ /\
+   (>o.o<)
+~~(   Y  )
+
+> xyzcat ecosystem · est. 2026
+```
 
 ---
 
+# xyzcat-ui — Conventions
+
+version: 0.1.0
+created: 05-06-2026
+updated: 10-06-2026
+
+---
 
 ## Purpose
 
@@ -16,7 +26,6 @@ For now, scope is xyzcat-ui only.
 
 ---
 
-
 ## Core Principle
 
 **Names are self-documenting. Frontmatter carries the metadata.**
@@ -26,16 +35,15 @@ Dates, versions, and context live in frontmatter, headers, and changelogs — no
 
 ---
 
-
 ## Folder Structure
 
 src/
 ├── components/
-│   ├── buttons/
-│   ├── cards/
-│   ├── modals/
-│   ├── tabs/
-│   └── theme/
+│ ├── buttons/
+│ ├── cards/
+│ ├── modals/
+│ ├── tabs/
+│ └── theme/
 ├── hooks/
 ├── layouts/
 └── styles/
@@ -47,10 +55,10 @@ src/
 
 ---
 
-
 ## Naming Conventions
 
 ### Components
+
 - PascalCase
 - Pattern: `TypeFunctionDescriptor`
 - Type comes first — makes file explorers sort by component type
@@ -63,28 +71,31 @@ src/
   - `TabsNav`
 
 ### Version suffixes
+
 - Underscores are reserved for version suffixes only
 - Use only when two versions must coexist in the repo simultaneously
 - Pattern: `TypeFunctionDescriptor_v2`
 - Otherwise, version lives in frontmatter and changelog only
 
 ### Files
+
 - Component files: `ComponentName.jsx`
 - Hook files: `HookName.js` — named for what the hook does
 - Token/style files: `lowercase_hyphenated.js`
 - No prefixes — the folder path provides context
 
 ### Folders
+
 - All lowercase, no hyphens or underscores
 - Single clear noun: `buttons`, `cards`, `hooks`, `layouts`
 
 ### Branches
-main     — stable, published
-dev      — active development
-feat/component-name  — feature branches e.g. feat/button-primary
+
+main — stable, published
+dev — active development
+feat/component-name — feature branches e.g. feat/button-primary
 
 ---
-
 
 ## File Frontmatter
 
@@ -114,7 +125,6 @@ Component files include a header comment block:
 
 ---
 
-
 ## Versioning
 
 - Follows semver: `MAJOR.MINOR.PATCH`
@@ -125,7 +135,6 @@ Component files include a header comment block:
 
 ---
 
-
 ## Credits
 
 - Flexoki design system: Steph Ango (stephango.com/flexoki) — MIT licence
@@ -133,10 +142,119 @@ Component files include a header comment block:
 
 ---
 
+## Standalone vs Hub Integration Pattern
+
+### The rule
+
+**Hub shell owns theme state. Modules never manage their own theme.**
+
+This is the single most important architectural rule for Hub integrations.
+Violating it creates duplicate toggles, dead props, and theme conflicts.
+
+### Standalone apps
+
+A standalone app (e.g. Moolah, Typsi) manages its own theme:
+
+```jsx
+// App.jsx — standalone
+import { useTheme, ToggleDarkLight } from "xyzcat-ui";
+
+export default function App() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <div data-theme={theme}>
+      <ToggleDarkLight theme={theme} onToggle={toggleTheme} />
+      <YourContent />
+    </div>
+  );
+}
+```
+
+- App calls `useTheme()` itself
+- App owns `data-theme` on its root element
+- App renders its own `ToggleDarkLight`
+- No theme props passed down
+
+### Hub modules
+
+A Hub module (e.g. Finance, PrivacyAudit, Typsi) never manages theme:
+
+```jsx
+// Finance.jsx — Hub module
+export default function Finance({ theme, toggleTheme }) {
+  // ✅ Use theme prop directly
+  // ❌ Never call useTheme() here
+  // ❌ Never render ToggleDarkLight here
+
+  return (
+    <div>
+      <YourContent />
+    </div>
+  );
+}
+```
+
+- Module receives `theme` + `toggleTheme` as props from Hub shell
+- Module never calls `useTheme()`
+- Module never renders `ToggleDarkLight`
+- `data-theme` is set by Hub shell, not the module
+
+### Hub shell
+
+Hub shell owns everything at the top level:
+
+```jsx
+// App.jsx — Hub shell
+import { useTheme } from "xyzcat-ui";
+
+export default function App() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <div data-theme={theme}>
+      <Nav theme={theme} onToggle={toggleTheme} />
+      <Routes>
+        <Route
+          path="/finance"
+          element={<Finance theme={theme} toggleTheme={toggleTheme} />}
+        />
+      </Routes>
+    </div>
+  );
+}
+```
+
+### `data-theme` placement rule
+
+`data-theme` must be on the element that has `background` applied.
+If `background` is on `body`, put `data-theme` on `body`.
+If `background` is on a wrapper div, put `data-theme` on that div.
+CSS variables will not resolve if `data-theme` is on a parent without `background`.
+
+### Styling convention
+
+- Prefer a dedicated `.css` file over inline `<style>` tags
+- Inline `<style>` tags in components create specificity issues and
+  are harder to override in Hub context
+
+### Summary table
+
+|                           | Standalone         | Hub module         |
+| ------------------------- | ------------------ | ------------------ |
+| Calls `useTheme()`        | ✅ Yes             | ❌ Never           |
+| Renders `ToggleDarkLight` | ✅ Yes             | ❌ Never           |
+| Owns `data-theme`         | ✅ Yes             | ❌ Never           |
+| Receives theme props      | ❌ No              | ✅ Yes             |
+| Styling                   | CSS file or inline | CSS file preferred |
+
+---
 
 ## Changelog
 
-| Version | Date | Notes |
-|---|---|---|
-| 0.1.0 | 05-06-2026 | Initial conventions document |
+| Version | Date       | Notes                                       |
+| ------- | ---------- | ------------------------------------------- |
+| 0.1.0   | 05-06-2026 | Initial conventions document                |
+| 0.2.0   | 10-06-2026 | Added standalone vs Hub integration pattern |
 
+---
