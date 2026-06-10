@@ -25,6 +25,9 @@ export { SettingsRow } from './components/cards/SettingsRow.jsx';
 export { ModalConfirm } from './components/modals/ModalConfirm.jsx';
 export { DataExportImport } from './components/data/DataExportImport.jsx';
 export { IconPlaceholder } from './components/icons/IconPlaceholder.jsx';
+export { AuthLogin } from './components/auth/AuthLogin.jsx';
+export { AuthLogout } from './components/auth/AuthLogout.jsx';
+
 
 
 

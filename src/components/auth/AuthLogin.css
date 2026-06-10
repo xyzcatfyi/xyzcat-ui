@@ -1,0 +1,81 @@
+/* ============================================
+   AuthLogin
+   version: 0.1.0
+   Base monochrome theme — Flexoki applied on top via token overrides
+   ============================================ */
+
+.auth-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    padding: 2rem;
+}
+
+.auth-login__box {
+    width: 100%;
+    max-width: 320px;
+    background: var(--bg2);
+    border: 1px solid var(--ui);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.auth-login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.auth-login__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+.auth-login__input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--ui);
+    border-radius: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.875rem;
+    font-family: var(--font-sans);
+    color: var(--tx);
+    outline: none;
+    transition: border-color 150ms ease;
+    box-sizing: border-box;
+}
+
+.auth-login__input:focus {
+    border-color: var(--tx2);
+}
+
+.auth-login__input--error {
+    border-color: var(--re);
+}
+
+.auth-login__error {
+    font-size: 0.75rem;
+    color: var(--re);
+    font-family: var(--font-sans);
+}
+
+.auth-login__btn {
+    width: 100%;
+    background: var(--tx);
+    color: var(--bg);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.625rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: opacity 150ms ease;
+}
+
+.auth-login__btn:hover {
+    opacity: 0.85;
+}
