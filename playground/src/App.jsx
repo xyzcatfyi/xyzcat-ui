@@ -15,6 +15,8 @@ import {
   ModalConfirm,
   DataExportImport,
   IconPlaceholder,
+  AuthLogin,
+  AuthLogout,
 } from "xyzcat-ui";
 import "./App.css";
 
@@ -22,6 +24,7 @@ export default function App() {
   const { theme, toggleTheme } = useTheme();
   const [activeTab, setActiveTab] = React.useState("overview");
   const [showModal, setShowModal] = React.useState(false);
+  const [authed, setAuthed] = React.useState(false);
 
   return (
     <div className="playground">
@@ -387,6 +390,30 @@ export default function App() {
             activeItem={activeTab}
             onItemClick={setActiveTab}
           />
+        </section>
+
+        {/* ── Auth ── */}
+        <section className="playground__section">
+          <h2>AuthLogin + AuthLogout</h2>
+
+          <h3>AuthLogin</h3>
+          {!authed ? (
+            <AuthLogin
+              onSuccess={() => setAuthed(true)}
+              password="test123"
+              storageKey="playground_authed"
+            />
+          ) : (
+            <div className="playground__row">
+              <span style={{ color: "var(--tx2)", fontSize: "0.875rem" }}>
+                Logged in ✓
+              </span>
+              <AuthLogout
+                onLogout={() => setAuthed(false)}
+                storageKey="playground_authed"
+              />
+            </div>
+          )}
         </section>
       </main>
 
