@@ -1,0 +1,207 @@
+/* ============================================
+   SelectMulti
+   version: 0.1.0
+   Base monochrome theme
+   ============================================ */
+
+.select-multi {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    width: 100%;
+    position: relative;
+}
+
+.select-multi__label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tx2);
+    font-family: var(--font-sans);
+}
+
+.select-multi__trigger {
+    background: var(--bg2);
+    border: 1px solid var(--ui);
+    border-radius: 0.5rem;
+    padding: 0.5625rem 0.75rem;
+    font-size: 0.875rem;
+    font-family: var(--font-sans);
+    color: var(--tx);
+    outline: none;
+    transition: border-color 150ms ease;
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.select-multi__trigger:focus {
+    border-color: var(--tx2);
+}
+
+.select-multi__trigger--open {
+    border-color: var(--tx2);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.select-multi__trigger--error {
+    border-color: var(--re);
+}
+
+.select-multi__placeholder {
+    color: var(--tx3);
+}
+
+.select-multi__arrow {
+    font-size: 0.625rem;
+    color: var(--tx2);
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+}
+
+.select-multi__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg2);
+    border: 1px solid var(--tx2);
+    border-top: none;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0;
+    z-index: 100;
+    max-height: 12rem;
+    overfl
+cat > src/components/forms/SelectMulti.css << 'EOF'
+/* ============================================
+   SelectMulti
+   version: 0.1.0
+   Base monochrome theme
+   ============================================ */
+
+.select-multi {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    width: 100%;
+    position: relative;
+}
+
+.select-multi__label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tx2);
+    font-family: var(--font-sans);
+}
+
+.select-multi__trigger {
+    background: var(--bg2);
+    border: 1px solid var(--ui);
+    border-radius: 0.5rem;
+    padding: 0.5625rem 0.75rem;
+    font-size: 0.875rem;
+    font-family: var(--font-sans);
+    color: var(--tx);
+    outline: none;
+    transition: border-color 150ms ease;
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.select-multi__trigger:focus {
+    border-color: var(--tx2);
+}
+
+.select-multi__trigger--open {
+    border-color: var(--tx2);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.select-multi__trigger--error {
+    border-color: var(--re);
+}
+
+.select-multi__placeholder {
+    color: var(--tx3);
+}
+
+.select-multi__arrow {
+    font-size: 0.625rem;
+    color: var(--tx2);
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+}
+
+.select-multi__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg2);
+    border: 1px solid var(--tx2);
+    border-top: none;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0;
+    z-index: 100;
+    max-height: 12rem;
+    overflow-y: auto;
+}
+
+.select-multi__option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-family: var(--font-sans);
+    color: var(--tx);
+    cursor: pointer;
+    transition: background 100ms ease;
+}
+
+.select-multi__option:hover {
+    background: var(--bg3);
+}
+
+.select-multi__option--selected {
+    color: var(--tx);
+    font-weight: 500;
+}
+
+.select-multi__checkbox {
+    width: 1rem;
+    font-size: 0.75rem;
+    color: var(--tx2);
+    flex-shrink: 0;
+}
+
+.select-multi--disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.select-multi__error {
+    font-size: 0.75rem;
+    color: var(--re);
+    font-family: var(--font-sans);
+}
