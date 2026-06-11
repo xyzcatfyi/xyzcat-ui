@@ -17,6 +17,7 @@ import {
   IconPlaceholder,
   AuthLogin,
   AuthLogout,
+  CardBase,
 } from "xyzcat-ui";
 import "./App.css";
 
@@ -414,6 +415,29 @@ export default function App() {
               />
             </div>
           )}
+        </section>
+        {/* ── CardBase ── */}
+        <section className="playground__section">
+          <h2>CardBase</h2>
+
+          <h3>Default padding</h3>
+          <CardBase>
+            <p style={{ margin: 0, color: 'var(--tx2)', fontSize: '0.875rem' }}>Card content goes here.</p>
+          </CardBase>
+
+          <h3>Custom padding</h3>
+          <CardBase padding="2rem">
+            <p style={{ margin: 0, color: 'var(--tx2)', fontSize: '0.875rem' }}>Card with 2rem padding.</p>
+          </CardBase>
+
+          <h3>Nested — card inside a card</h3>
+          <CardBase>
+            <p style={{ margin: '0 0 0.75rem', color: 'var(--tx)', fontSize: '0.875rem', fontWeight: 600 }}>Outer card</p>
+            <CardBase padding="0.75rem">
+              <p style={{ margin: 0, color: 'var(--tx2)', fontSize: '0.8125rem' }}>Inner card</p>
+            </CardBase>
+          </CardBase>
+
         </section>
       </main>
 

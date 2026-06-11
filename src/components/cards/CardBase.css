@@ -1,0 +1,13 @@
+/* ============================================
+   CardBase
+   version: 0.1.0
+   Base monochrome theme — Flexoki applied on top via token overrides
+   ============================================ */
+
+.card-base {
+    background: var(--bg2);
+    border: 1px solid var(--ui);
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+}
