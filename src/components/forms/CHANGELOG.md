@@ -9,13 +9,17 @@
 ---
 
 name: forms — changelog
-version: 0.1.0
+version: 0.2.0
 created: 2026-06-11
 updated: 2026-06-11
 
 ---
 
 # forms — Changelog
+
+## v0.2.0 — 11-06-2026
+
+- Added `Select` — labeled dropdown, error state, disabled state
 
 ## v0.1.0 — 11-06-2026
 

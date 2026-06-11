@@ -38,3 +38,4 @@ export { AuthLogout } from "./components/auth/AuthLogout.jsx";
 export { CardBase } from "./components/cards/CardBase.jsx";
 export { IconBtn } from "./components/buttons/IconBtn.jsx";
 export { Input } from './components/forms/Input.jsx';
+export { Select } from './components/forms/Select.jsx';

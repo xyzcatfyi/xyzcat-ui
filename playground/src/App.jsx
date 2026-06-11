@@ -20,6 +20,7 @@ import {
   CardBase,
   IconBtn,
   Input,
+  Select,
 } from "xyzcat-ui";
 import "./App.css";
 
@@ -540,6 +541,47 @@ export default function App() {
             label="Disabled field"
             value="Can't touch this"
             onChange={() => {}}
+            disabled
+          />
+        </section>
+
+        {/* ── Select ── */}
+        <section className="playground__section">
+          <h2>Select</h2>
+
+          <h3>Default</h3>
+          <Select
+            label="Category"
+            value="food"
+            onChange={() => {}}
+            options={[
+              { value: "food", label: "Food" },
+              { value: "transport", label: "Transport" },
+              { value: "health", label: "Health" },
+            ]}
+          />
+
+          <h3>Error state</h3>
+          <Select
+            label="Category"
+            value=""
+            onChange={() => {}}
+            options={[
+              { value: "food", label: "Food" },
+              { value: "transport", label: "Transport" },
+            ]}
+            error="Please select a category"
+          />
+
+          <h3>Disabled</h3>
+          <Select
+            label="Category"
+            value="food"
+            onChange={() => {}}
+            options={[
+              { value: "food", label: "Food" },
+              { value: "transport", label: "Transport" },
+            ]}
             disabled
           />
         </section>
