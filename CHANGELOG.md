@@ -11,11 +11,23 @@
 name: xyzcat-ui — changelog
 version: 0.9.0
 created: 16-04-2026
-updated: 10-06-2026
+updated: 11-06-2026
 
 ---
 
 # Changelog
+
+---
+
+## v0.9.1 — 11-06-2026
+
+### Added
+
+- `CardBase` — surface container, configurable padding, base monochrome tokens
+- `IconBtn` — icon-only button, default and destructive variants
+- `Input` — labeled text input, error and disabled states
+- `Select` — labeled dropdown, error and disabled states, `options` array prop
+- `src/components/forms/` — new folder for form components
 
 ---
 
