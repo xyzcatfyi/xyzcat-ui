@@ -19,6 +19,7 @@ import {
   AuthLogout,
   CardBase,
   IconBtn,
+  Input,
 } from "xyzcat-ui";
 import "./App.css";
 
@@ -503,6 +504,44 @@ export default function App() {
               size={20}
             />
           </div>
+        </section>
+
+        {/* ── Input ── */}
+        <section className="playground__section">
+          <h2>Input</h2>
+
+          <h3>Default</h3>
+          <Input
+            label="Label"
+            value=""
+            onChange={() => {}}
+            placeholder="Placeholder text"
+          />
+
+          <h3>With value</h3>
+          <Input
+            label="Email"
+            value="hello@xyzcat.fyi"
+            onChange={() => {}}
+            type="email"
+          />
+
+          <h3>Error state</h3>
+          <Input
+            label="Password"
+            value="wrong"
+            onChange={() => {}}
+            type="password"
+            error="Incorrect password"
+          />
+
+          <h3>Disabled</h3>
+          <Input
+            label="Disabled field"
+            value="Can't touch this"
+            onChange={() => {}}
+            disabled
+          />
         </section>
       </main>
 
