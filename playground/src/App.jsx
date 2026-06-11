@@ -1,5 +1,5 @@
 import React from "react";
-import { Plus, ArrowRight } from "lucide-react";
+import { Plus, ArrowRight, Trash2, Pencil, Download } from "lucide-react";
 import {
   useTheme,
   ToggleDarkLight,
@@ -18,6 +18,7 @@ import {
   AuthLogin,
   AuthLogout,
   CardBase,
+  IconBtn,
 } from "xyzcat-ui";
 import "./App.css";
 
@@ -422,22 +423,86 @@ export default function App() {
 
           <h3>Default padding</h3>
           <CardBase>
-            <p style={{ margin: 0, color: 'var(--tx2)', fontSize: '0.875rem' }}>Card content goes here.</p>
+            <p style={{ margin: 0, color: "var(--tx2)", fontSize: "0.875rem" }}>
+              Card content goes here.
+            </p>
           </CardBase>
 
           <h3>Custom padding</h3>
           <CardBase padding="2rem">
-            <p style={{ margin: 0, color: 'var(--tx2)', fontSize: '0.875rem' }}>Card with 2rem padding.</p>
+            <p style={{ margin: 0, color: "var(--tx2)", fontSize: "0.875rem" }}>
+              Card with 2rem padding.
+            </p>
           </CardBase>
 
           <h3>Nested — card inside a card</h3>
           <CardBase>
-            <p style={{ margin: '0 0 0.75rem', color: 'var(--tx)', fontSize: '0.875rem', fontWeight: 600 }}>Outer card</p>
+            <p
+              style={{
+                margin: "0 0 0.75rem",
+                color: "var(--tx)",
+                fontSize: "0.875rem",
+                fontWeight: 600,
+              }}
+            >
+              Outer card
+            </p>
             <CardBase padding="0.75rem">
-              <p style={{ margin: 0, color: 'var(--tx2)', fontSize: '0.8125rem' }}>Inner card</p>
+              <p
+                style={{
+                  margin: 0,
+                  color: "var(--tx2)",
+                  fontSize: "0.8125rem",
+                }}
+              >
+                Inner card
+              </p>
             </CardBase>
           </CardBase>
+        </section>
 
+        {/* ── IconBtn ── */}
+        <section className="playground__section">
+          <h2>IconBtn</h2>
+
+          <h3>Default variant</h3>
+          <div className="playground__row">
+            <IconBtn icon={Pencil} onClick={() => {}} title="Edit" />
+            <IconBtn icon={Download} onClick={() => {}} title="Download" />
+            <IconBtn icon={Trash2} onClick={() => {}} title="Delete" />
+          </div>
+
+          <h3>Destructive variant</h3>
+          <div className="playground__row">
+            <IconBtn
+              icon={Trash2}
+              onClick={() => {}}
+              title="Delete"
+              variant="destructive"
+            />
+          </div>
+
+          <h3>Sizes</h3>
+          <div className="playground__row">
+            <IconBtn
+              icon={Pencil}
+              onClick={() => {}}
+              title="Edit small"
+              size={12}
+            />
+            <IconBtn
+              icon={Pencil}
+              onClick={() => {}}
+              title="Edit default"
+              size={16}
+            />
+            <IconBtn
+              icon={Pencil}
+              onClick={() => {}}
+              title="Edit large"
+              size={20}
+            />
+          </div>
         </section>
       </main>
 

@@ -36,3 +36,4 @@ export { IconPlaceholder } from "./components/icons/IconPlaceholder.jsx";
 export { AuthLogin } from "./components/auth/AuthLogin.jsx";
 export { AuthLogout } from "./components/auth/AuthLogout.jsx";
 export { CardBase } from "./components/cards/CardBase.jsx";
+export { IconBtn } from "./components/buttons/IconBtn.jsx";
